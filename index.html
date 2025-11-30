@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Quarterly Earnings Report - Financial Institution</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h2>Q3 Quarterly Earnings Report</h2>
+                <h3>Financial Technology Division</h3>
+                <p>
+                    <small>Presented by: Technical Consultant</small><br>
+                    <small>Email: <a href="mailto:23f3001344@ds.study.iitm.ac.in">23f3001344@ds.study.iitm.ac.in</a></small>
+                </p>
+                <aside class="notes">
+                    Welcome stakeholders. Today we will review Q3 performance, technical implementation of our new data models, and financial projections.
+                </aside>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    ## Executive Summary
+                    
+                    *Overview of market performance.*
+
+                    - **Revenue Growth:** Exceeded expectations by 15%
+                    - **User Acquisition:** Stabilized in key demographics
+                    - **Tech Dept:** Successfully migrated to cloud infrastructure
+                    
+                    ---
+                    > "Innovation distinguishes between a leader and a follower."
+                </textarea>
+            </section>
+
+            <section>
+                <h2>Risk Modeling Formulas</h2>
+                <p>We applied the Black-Scholes model for option pricing evaluations this quarter:</p>
+                
+                \[
+                C = S_t N(d_1) - K e^{-rt} N(d_2)
+                \]
+
+                <p style="font-size: 0.6em">Where \( d_1 = \frac{\ln(S_t/K) + (r + \sigma^2/2)t}{\sigma\sqrt{t}} \)</p>
+
+                <aside class="notes">
+                    Note to self: Explain that S_t is spot price, K is strike price. Emphasize how this minimizes our risk exposure.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Algorithmic Trading Logic</h2>
+                <p>Python implementation for the moving average crossover strategy:</p>
+                
+                <pre><code class="python" data-line-numbers="1-2|5-6|9-10">
+import pandas as pd
+import numpy as np
+
+def calculate_strategy(data):
+    # Calculate Short and Long Moving Averages
+    data['SMA_50'] = data['Close'].rolling(window=50).mean()
+    data['SMA_200'] = data['Close'].rolling(window=200).mean()
+    
+    # Generate Buy Signal
+    if data['SMA_50'].iloc[-1] > data['SMA_200'].iloc[-1]:
+        return "BUY"
+    return "HOLD"
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Q4 Strategic Goals</h2>
+                <p>Our roadmap for the upcoming quarter:</p>
+                
+                <ul>
+                    <li class="fragment fade-in">Optimize Low-Latency Execution</li>
+                    <li class="fragment fade-up">Expand AI-Driven Credit Scoring</li>
+                    <li class="fragment grow">Reduce Operational Overhead by 10%</li>
+                    <li class="fragment highlight-red">Launch New Mobile API</li>
+                </ul>
+
+                <aside class="notes">
+                    Click through these slowly. The API launch is the most critical point to discuss with the board.
+                </aside>
+            </section>
+
+            <section style="text-align: left;">
+                <h2>Thank You</h2>
+                <p>Questions?</p>
+                <br>
+                <p>Contact: 23f3001344@ds.study.iitm.ac.in</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            
+            // Learn more: https://revealjs.com/plugins/
+            plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ]
+        });
+    </script>
+</body>
+</html>
