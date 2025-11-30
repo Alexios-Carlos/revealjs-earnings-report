@@ -1,86 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="author" content="23f3001344@ds.study.iitm.ac.in">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quarterly Earnings Report - RevealJS</title>
 
-    <title>Quarterly Earnings Report</title>
-
+    <!-- RevealJS CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
-</head>
-<body>
-    
-    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 9999; font-size: 14px; color: black; background: white; padding: 5px;">
-        Student Email: 23f3001344@ds.study.iitm.ac.in
-    </div>
 
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+
+    <style>
+      .center-text { text-align: center; }
+    </style>
+  </head>
+
+  <body>
     <div class="reveal">
-        <div class="slides">
+      <div class="slides">
 
-            <section>
-                <h3>Quarterly Earnings Report</h3>
-                
-                <p style="font-size: 30px; font-weight: bold; color: #222;">
-                    23f3001344@ds.study.iitm.ac.in
-                </p>
-                
-                <aside class="notes">
-                    Welcome stakeholders.
-                </aside>
-            </section>
+        <!-- Slide 1 -->
+        <section class="center-text">
+          <h1>Quarterly Earnings Report</h1>
+          <h3>By Technical Consultant – Financial Analytics</h3>
+          <p><b>Email:</b> 23f3001344@ds.study.iitm.ac.in</p>
+          <aside class="notes">
+            Welcome stakeholders. This presentation demonstrates revenue performance and technical insights
+            using interactive RevealJS visual capabilities.
+          </aside>
+        </section>
 
-            <section data-markdown>
-                <textarea data-template>
-                    ## Executive Summary
-                    - **Revenue:** +15%
-                    - **Growth:** Stable
-                    ---
-                    > "Innovation distinguishes between a leader and a follower."
-                </textarea>
-            </section>
+        <!-- Markdown Slide -->
+        <section data-markdown>
+          <textarea data-template>
+## Q1 Performance Overview
 
-            <section>
-                <h2>Formulas</h2>
-                \[ C = S_t N(d_1) - K e^{-rt} N(d_2) \]
-            </section>
+- 📈 Revenue growth: **18%**
+- 💰 Net Profit: **₹142 Cr**
+- 🧾 Operational cost reduction: **12%**
+- 🌍 New market entries: **2 regions**
 
-            <section>
-                <h2>Code</h2>
-                <pre><code class="python" data-line-numbers="1|2|3">
-def strategy(data):
-    if data > 100:
-        return "BUY"
-                </code></pre>
-            </section>
+---
+### Highlights
+- Customer retention increased by **9%**
+- Digital product adoption improved significantly
+          </textarea>
+        </section>
 
-            <section>
-                <h2>Goals</h2>
-                <ul>
-                    <li class="fragment">Goal 1</li>
-                    <li class="fragment">Goal 2</li>
-                </ul>
-            </section>
+        <!-- Animated Fragments -->
+        <section>
+          <h2>Revenue Drivers</h2>
+          <ul>
+            <li class="fragment">Subscription model expansion</li>
+            <li class="fragment">Enterprise licensing</li>
+            <li class="fragment fade-up">Cloud-based analytics platform</li>
+          </ul>
+          <aside class="notes">
+            Reveal each revenue driver one-by-one to keep the stakeholders focused.
+          </aside>
+        </section>
 
-        </div>
+        <!-- Code with Syntax Highlighting -->
+        <section>
+<pre><code class="python" data-line-numbers="1-2|4|7-9">
+import pandas as pd
+
+# Load quarterly financials
+df = pd.read_csv("earnings.csv")
+
+# Calculate profit margin
+df["profit_margin"] = (df["net_profit"] / df["total_revenue"]) * 100
+
+print(df.head())
+</code></pre>
+          <aside class="notes">
+            Use this code to highlight how data science teams validate revenue and profit margin figures.
+          </aside>
+        </section>
+
+        <!-- Financial Math -->
+        <section>
+          <h2>Financial Formula</h2>
+          <p>Return on Investment (ROI):</p>
+          \[
+          ROI = \frac{Net\ Profit}{Investment\ Cost} \times 100
+          \]
+          <aside class="notes">
+            Explain how ROI is calculated and show the improvement over the previous quarter.
+          </aside>
+        </section>
+
+      </div>
     </div>
 
+    <!-- RevealJS Core -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+
+    <!-- Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
 
+    <!-- Initialize RevealJS -->
     <script>
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            center: true,
-            hash: true,
-            plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ]
-        });
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        transition: "slide",
+        plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealNotes ]
+      });
     </script>
-</body>
+  </body>
 </html>
+
